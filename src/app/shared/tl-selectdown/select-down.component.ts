@@ -14,7 +14,7 @@ export class SelectDownComponent implements OnInit {
   @Input() width = 400;
   @Input() scrollHeight = 300;
   @Input() selectValue: string | number = 'Cadillac';
-  @Output() onChange = new EventEmitter<any>();
+  @Output() change = new EventEmitter<any>();
   selectTitle = null;
   searchValue = null;
   _datas = [];
@@ -67,7 +67,7 @@ export class SelectDownComponent implements OnInit {
 
   onSelectChange(e) {
     this.selectTitle = e.label;
-    this.onChange.emit(e);
+    this.change.emit(e);
     // console.log(e);
   }
 
