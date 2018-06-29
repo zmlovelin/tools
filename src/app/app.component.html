@@ -1,27 +1,2 @@
-<div>
-  <button nz-button nzType="primary">Primary</button>
-  <button nz-button nzType="default">Default</button>
-  <button nz-button nzType="dashed">Dashed</button>
-  <button nz-button nzType="danger">Danger</button>
-</div>
 
-<button nz-button [nzType]="'primary'" (click)="showModal()"><span>Show Modal</span></button>
-<nz-modal [(nzVisible)]="isVisible" nzTitle="The first Modal" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
-  <p>Content one</p>
-  <p>Content two</p>
-  <p>Content three</p>
-</nz-modal>
-
-
-<p-dropdown [options]="cars" [(ngModel)]="selectedCar2" [style]="{'width':'350px'}" filter="true">
-  <ng-template let-item pTemplate="selectedItem">
-    <!--<img src="assets/showcase/images/demo/car/{{item.label}}.png" style="width:16px;vertical-align:middle" />-->
-    <span style="vertical-align:middle">{{item.label}}</span>
-  </ng-template>
-  <ng-template let-car pTemplate="item">
-    <div class="ui-helper-clearfix" style="position: relative;height: 25px;">
-      <!--<img src="assets/showcase/images/demo/car/{{car.label}}.png" style="width:24px;position:absolute;top:1px;left:5px"/>-->
-      <div style="font-size:14px;margin-top:4px">{{car.label}}</div>
-    </div>
-  </ng-template>
-</p-dropdown>
+<router-outlet></router-outlet>

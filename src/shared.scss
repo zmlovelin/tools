@@ -1,0 +1,54 @@
+
+//修改prng的样式
+.ui-state-default {
+  //border-color: #40a9ff !important;
+}
+.ui-dropdown:not(.ui-state-disabled):hover {
+  //box-shadow:0 0 0 2px rgba(24,144,255,.2)  !important;
+  //border-color: #40a9ff !important;
+}
+.ui-dropdown-panel .ui-dropdown-item:not(.ui-state-highlight):hover {
+  background-color: #e6f7ff !important;
+  color: #222222 !important;
+}
+.ui-state-highlight {
+  background-color: #fafafa !important;
+  color: #222222 !important;
+}
+.ui-inputtext.ui-state-focus, .ui-inputtext:focus {
+  box-shadow:0 0 0 2px rgba(24,144,255,.2)  !important;
+  border-color: #40a9ff !important;
+
+}
+.ui-dropdown label.ui-dropdown-label {
+  line-height: 26px !important;
+}
+
+//tl-selectDown
+
+
+.group-li-item .ant-menu-item-group-title{
+  padding: 5px 10px;
+}
+.ant-menu-vertical .ant-menu-item {
+  margin-top: 0px !important;
+}
+.group-item  .ant-menu-vertical .ant-menu-item:not(:last-child) {
+  margin-bottom: 0px !important;
+}
+
+.ant-menu-vertical .ant-menu-item:not(:last-child) {
+  margin-bottom: 0px !important;
+}
+
+.ant-menu-vertical {
+  //border:1px solid #ccc !important;
+  //border-radius: 3px;
+}
+.ant-menu-vertical>.ant-menu-submenu>.ant-menu-submenu-title {
+  height:35px !important;
+  line-height: 35px !important;
+  margin: 0px !important;
+}
+
+

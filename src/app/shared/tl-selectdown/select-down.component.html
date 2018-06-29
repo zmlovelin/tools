@@ -1,0 +1,44 @@
+
+<ul nz-menu [nzMode]="'vertical'" class="grop-ul">
+  <li nz-submenu (nzOpenChange)="nzOpenChange()">
+    <span title>
+      <span [style.color]="data.length === 1 ? '#1890ff':'' ">
+         <i class="icon-ok anticon anticon-check" *ngIf="(data.length === 1 && !filter)   || selectTitle!=gropTitle"></i>
+      <span style="margin-left: 23px;">{{gropTitle}}</span>
+      </span>
+    </span>
+    <ul class="grop-pane-main" *ngIf="showPane" [style.width.px]="width"  [style.border-color]="showPane ? '#ccc':'#fff'">
+      <li class="grop-pane-title" *ngIf="showSelectTile">
+        {{selectTitle}}
+      </li>
+      <li class="grop-pane-title" *ngIf="filter">
+        <nz-input-group  class="grop-input" nzSuffixIcon="anticon anticon-search">
+          <input type="text" [(ngModel)]="searchValue" nz-input placeholder="input search text" (ngModelChange)="searchChange($event)">
+        </nz-input-group>
+      </li>
+      <div class="grop-pane-auto" [style.max-height.px]="scrollHeight" [style.margin-top.px]="filter ? 5 : 0 ">
+        <ng-container *ngFor="let row of data">
+          <li nz-menu-group class="group-li-item"  *ngIf="row['children']">
+            <span title style="color:#3e3b3b;font-weight: 600">{{row.label}}</span>
+            <ul>
+              <ng-container *ngFor="let item of row['children']">
+                <li  nz-menu-item class="group-item" (click)="onSelectChange(item)">
+                  {{item.label}}
+                </li>
+              </ng-container>
+            </ul>
+          </li>
+          <li  nz-menu-item class="group-item"  [class.bg-r]="data.length===1 && row.value === selectValue" *ngIf="!row['children']" (click)="onSelectChange(row)">
+            {{row.label}}
+          </li>
+        </ng-container>
+        <li style="padding: 10px 8px 15px;" *ngIf="data.length === 0">no results "{{searchValue}}"</li>
+      </div>
+
+    </ul>
+  </li>
+</ul>
+
+
+
+

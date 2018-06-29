@@ -1,0 +1,50 @@
+<div style="padding: 30px;">
+  <p-dropdown [options]="cars" [(ngModel)]="selectedCar2" [style]="{'width':'350px'}" filter="true">
+    <ng-template let-item pTemplate="selectedItem">
+      <!--<img src="assets/showcase/images/demo/car/{{item.label}}.png" style="width:16px;vertical-align:middle" />-->
+      <span style="vertical-align:middle">{{item.label}}</span>
+    </ng-template>
+    <ng-template let-car pTemplate="item">
+      <div class="ui-helper-clearfix" style="position: relative;height: 25px;">
+        <!--<img src="assets/showcase/images/demo/car/{{car.label}}.png" style="width:24px;position:absolute;top:1px;left:5px"/>-->
+        <div style="font-size:14px;margin-top:4px">{{car.label}}</div>
+      </div>
+    </ng-template>
+  </p-dropdown>
+</div>
+
+<div style="padding: 30px;">
+  <tl-selectDown [gropTitle]="'选择设备'"
+                  [filter]="true"
+                  [showSelectTile]="true"
+                  [data]="data"
+                  [width]="400"
+                  (onChange)="onSelectChange($event)">
+  </tl-selectDown>
+
+
+
+</div>
+
+
+<div style="padding: 30px;">
+  <tl-selectDown [gropTitle]="'选择设备'"
+               [filter]="false"
+               [showSelectTile]="false"
+               [data]="data1"
+               [width]="200"
+               (onChange)="onSelectChange($event)"
+  ></tl-selectDown>
+</div>
+
+<div style="padding: 30px;">
+  <tl-selectDown [gropTitle]="'选择设备'"
+               [filter]="true"
+               [showSelectTile]="false"
+               [data]="data2"
+               [width]="200"
+               (onChange)="onSelectChange($event)"
+  ></tl-selectDown>
+
+</div>
+
