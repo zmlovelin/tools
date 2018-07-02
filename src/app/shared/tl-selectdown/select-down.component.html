@@ -1,5 +1,5 @@
 
-<ul nz-menu [nzMode]="'vertical'" class="grop-ul">
+<ul nz-menu [nzMode]="'vertical'" class="grop-ul" [style.width.px]="width">
   <li nz-submenu (nzOpenChange)="nzOpenChange()">
     <span title>
       <span [style.color]="data.length === 1 ? '#1890ff':'' ">
@@ -7,7 +7,7 @@
       <span style="margin-left: 23px;">{{gropTitle}}</span>
       </span>
     </span>
-    <ul class="grop-pane-main" *ngIf="showPane" [style.width.px]="width"  [style.border-color]="showPane ? '#ccc':'#fff'">
+    <ul class="grop-pane-main" *ngIf="showPane" [style.width.px]="selectWidth"  [style.border-color]="showPane ? '#ccc':'#fff'">
       <li class="grop-pane-title" *ngIf="showSelectTile">
         {{selectTitle}}
       </li>

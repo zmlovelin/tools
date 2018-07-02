@@ -1,0 +1,31 @@
+.layout-con {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+
+  .layout-con-top {
+    min-width: 1280px;
+    height: 50px;
+    background-color: #2275c7;
+  }
+  .layout-con-main {
+    min-width: 1280px;
+    overflow-x: auto;
+    flex-grow:1;
+    max-height: 100%;
+    overflow: auto;
+    padding:10px 150px;
+  }
+  .layout-con-footer {
+    min-width: 1280px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 50px;
+    background-color: #2275c7;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+    color: #ffffff;
+  }
+
+}

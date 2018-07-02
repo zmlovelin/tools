@@ -1,0 +1,39 @@
+.main-container {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  .main-left {
+    margin:0 40px 20px 0;
+    .main-left-p5 {
+      padding: 5px;
+      .left-title {
+        height: 35px;
+        margin-bottom: 20px;
+        .title-text {
+          display: inline-block;
+          padding:5px;
+          width: 50%;
+          border-bottom: 2px solid red;
+          font: 500 16px '微软雅黑';
+        }
+        .title-border {
+          display: inline-block;
+          width: 50%;height: 30px;
+          vertical-align:bottom;
+          border-bottom: 1px solid #ccc;
+        }
+      }
+    }
+  }
+  .main-right {
+    flex-grow:5;
+    display: flex;
+    background: #e6f7ff;
+    height: 600px;
+    margin-bottom: 20px;
+    .main-site-A {
+      width: 50%;
+      background: red;
+    }
+  }
+}

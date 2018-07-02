@@ -11,7 +11,8 @@ export class SelectDownComponent implements OnInit {
   @Input() filter = true; // 是否有搜索框
   @Input() data; // 数据
   @Input() showPane = true; // 上一级没有的时候不能hover出右边的
-  @Input() width = 400;
+  @Input() selectWidth = 400;
+  @Input() width;
   @Input() scrollHeight = 300;
   @Input() selectValue: string | number = 'Cadillac';
   @Output() change = new EventEmitter<any>();

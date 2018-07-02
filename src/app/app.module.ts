@@ -15,10 +15,12 @@ import {DropdownModule} from 'primeng/dropdown';
 import { RouterModule } from '@angular/router';
 import {ROUTER_CONFIG} from './app.routes';
 import {SharedModule } from 'primeng/shared';
+import {MenuTopComponent} from './components/menu-top/menu-top.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MenuTopComponent
   ],
   imports: [
     CommonModule,

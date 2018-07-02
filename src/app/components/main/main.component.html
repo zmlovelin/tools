@@ -1,50 +1,103 @@
-<div style="padding: 30px;">
-  <p-dropdown [options]="cars" [(ngModel)]="selectedCar2" [style]="{'width':'350px'}" filter="true">
-    <ng-template let-item pTemplate="selectedItem">
+
+<div class="main-container">
+  <div class="main-left">
+    <div class="main-left-p5">
+      <div class="left-title">
+        <span class="title-text" >站点配置</span>
+        <span class="title-border" ></span>
+      </div>
+      <p-dropdown [options]="cars" [(ngModel)]="selectedCar2" [style]="{'width':'300px'}" filter="true">
+      <ng-template let-item pTemplate="selectedItem">
       <!--<img src="assets/showcase/images/demo/car/{{item.label}}.png" style="width:16px;vertical-align:middle" />-->
       <span style="vertical-align:middle">{{item.label}}</span>
-    </ng-template>
-    <ng-template let-car pTemplate="item">
+      </ng-template>
+      <ng-template let-car pTemplate="item">
       <div class="ui-helper-clearfix" style="position: relative;height: 25px;">
-        <!--<img src="assets/showcase/images/demo/car/{{car.label}}.png" style="width:24px;position:absolute;top:1px;left:5px"/>-->
-        <div style="font-size:14px;margin-top:4px">{{car.label}}</div>
+      <!--<img src="assets/showcase/images/demo/car/{{car.label}}.png" style="width:24px;position:absolute;top:1px;left:5px"/>-->
+      <div style="font-size:14px;margin-top:4px">{{car.label}}</div>
       </div>
-    </ng-template>
-  </p-dropdown>
+      </ng-template>
+      </p-dropdown>
+    </div>
+
+    <div class="main-left-p5">
+      <tl-selectDown  [gropTitle]="'选择设备'"
+                      [filter]="true"
+                      [showSelectTile]="true"
+                      [showPane]="true"
+                      [data]="data"
+                      [selectWidth]="400"
+                      (change)="onSelectChange($event)">
+      </tl-selectDown>
+    </div>
+
+  </div>
+  <div class="main-right">
+    <div class="main-site-A"></div>
+  </div>
 </div>
 
-<div style="padding: 30px;">
-  <tl-selectDown [gropTitle]="'选择设备'"
-                  [filter]="true"
-                  [showSelectTile]="true"
-                  [data]="data"
-                  [width]="400"
-                  (change)="onSelectChange($event)">
-  </tl-selectDown>
-
-
-
-</div>
-
-
-<div style="padding: 30px;">
-  <tl-selectDown [gropTitle]="'选择设备'"
-               [filter]="false"
-               [showSelectTile]="false"
-               [data]="data1"
-               [width]="200"
-                 (change)="onSelectChange($event)"
-  ></tl-selectDown>
-</div>
-
-<div style="padding: 30px;">
-  <tl-selectDown [gropTitle]="'选择设备'"
-               [filter]="true"
-               [showSelectTile]="false"
-               [data]="data2"
-               [width]="200"
-                 (change)="onSelectChange($event)"
-  ></tl-selectDown>
+<div>
+  <p style="color: red;">*所选9800单板基于版本：V100R005C10 ； 所选8800单板基于版本：V100R011C10 ; 所选1800单板基于版本：V100R007C10。
+    说明：
+  </p>
+  <p>
+    1.工具只判断OTN站点是否支持ODUk SNCP保护；判断PKT/EoO/EoW站点是否支持ERPS、PW/Tunnel APS和分组 SNCP，站点间对接成功时，所支持的保护取2个站点的交集。
+  </p>
+  <p>
+    2.分组单板，EoO/EoW单板和OTN单板对接时，需注意ETH业务类型的配置，其中分组单板支持Native ETH, ETH PWE3；EoO/EoW单板支持Native ETH ; OTN单板支持ETH透传，站点间对接成功时，所支持的ETH业务类型取2个站点的交集。 有一种特殊情况，即分组单板/EoO/EoW单板和OTN单板对接时，分组单板/EoO/EoW的ETH业务类型为Native ETH，OTN单板ETH业务类型为ETH透传。
+  </p>
 
 </div>
+
+
+
+<!--<div style="padding: 30px;">-->
+  <!--<p-dropdown [options]="cars" [(ngModel)]="selectedCar2" [style]="{'width':'350px'}" filter="true">-->
+    <!--<ng-template let-item pTemplate="selectedItem">-->
+      <!--&lt;!&ndash;<img src="assets/showcase/images/demo/car/{{item.label}}.png" style="width:16px;vertical-align:middle" />&ndash;&gt;-->
+      <!--<span style="vertical-align:middle">{{item.label}}</span>-->
+    <!--</ng-template>-->
+    <!--<ng-template let-car pTemplate="item">-->
+      <!--<div class="ui-helper-clearfix" style="position: relative;height: 25px;">-->
+        <!--&lt;!&ndash;<img src="assets/showcase/images/demo/car/{{car.label}}.png" style="width:24px;position:absolute;top:1px;left:5px"/>&ndash;&gt;-->
+        <!--<div style="font-size:14px;margin-top:4px">{{car.label}}</div>-->
+      <!--</div>-->
+    <!--</ng-template>-->
+  <!--</p-dropdown>-->
+<!--</div>-->
+<!--<div style="padding: 30px;">-->
+  <!--<tl-selectDown [gropTitle]="'选择设备'"-->
+                  <!--[filter]="true"-->
+                  <!--[showSelectTile]="true"-->
+                  <!--[data]="data"-->
+                  <!--[width]="400"-->
+                  <!--(change)="onSelectChange($event)">-->
+  <!--</tl-selectDown>-->
+
+
+
+<!--</div>-->
+
+
+<!--<div style="padding: 30px;">-->
+  <!--<tl-selectDown [gropTitle]="'选择设备'"-->
+               <!--[filter]="false"-->
+               <!--[showSelectTile]="false"-->
+               <!--[data]="data1"-->
+               <!--[width]="200"-->
+                 <!--(change)="onSelectChange($event)"-->
+  <!--&gt;</tl-selectDown>-->
+<!--</div>-->
+
+<!--<div style="padding: 30px;">-->
+  <!--<tl-selectDown [gropTitle]="'选择设备'"-->
+               <!--[filter]="true"-->
+               <!--[showSelectTile]="false"-->
+               <!--[data]="data2"-->
+               <!--[width]="200"-->
+                 <!--(change)="onSelectChange($event)"-->
+  <!--&gt;</tl-selectDown>-->
+
+<!--</div>-->
 
