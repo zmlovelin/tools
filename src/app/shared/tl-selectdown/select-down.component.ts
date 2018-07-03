@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, OnDestroy} from '@angular/core';
 
 @Component({
   selector: 'tl-selectDown',
@@ -11,11 +11,12 @@ export class SelectDownComponent implements OnInit {
   @Input() filter = true; // 是否有搜索框
   @Input() data; // 数据
   @Input() showPane = true; // 上一级没有的时候不能hover出右边的
-  @Input() selectWidth = 400;
-  @Input() width;
+  @Input() selectWidth = 400; // 选项的width
+  @Input() width; // 根dom的width
   @Input() scrollHeight = 300;
-  @Input() selectValue: string | number = 'Cadillac';
+  @Input() selectValue: string | number = ''; // 当只有一个数据的时候默认选中
   @Output() change = new EventEmitter<any>();
+  @ViewChild('searchInput') searchInput: ElementRef;
   selectTitle = null;
   searchValue = null;
   _datas = [];
@@ -76,7 +77,14 @@ export class SelectDownComponent implements OnInit {
     this.searchValue = null;
     if (this.filter) {
       this.searchChange('');
+      this.inputFocus();
     }
+  }
+  inputFocus() {
+    // console.log(this.searchInput.nativeElement);
+    let timer = setTimeout(() => {
+      this.searchInput.nativeElement.focus();
+      }, 0);
   }
 
 

@@ -13,7 +13,7 @@
       </li>
       <li class="grop-pane-title" *ngIf="filter">
         <nz-input-group  class="grop-input" nzSuffixIcon="anticon anticon-search">
-          <input type="text" [(ngModel)]="searchValue" nz-input placeholder="input search text" (ngModelChange)="searchChange($event)">
+          <input #searchInput type="text" [(ngModel)]="searchValue" nz-input placeholder="input search text" (ngModelChange)="searchChange($event)">
         </nz-input-group>
       </li>
       <div class="grop-pane-auto" [style.max-height.px]="scrollHeight" [style.margin-top.px]="filter ? 5 : 0 ">

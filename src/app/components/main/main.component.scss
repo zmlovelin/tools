@@ -4,11 +4,12 @@
   flex-direction: row;
   .main-left {
     margin:0 40px 20px 0;
+    padding: 0 5px;
     .main-left-p5 {
-      padding: 5px;
+      margin: 5px;
       .left-title {
         height: 35px;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         .title-text {
           display: inline-block;
           padding:5px;
@@ -28,12 +29,46 @@
   .main-right {
     flex-grow:5;
     display: flex;
-    background: #e6f7ff;
+    //background: #e6f7ff;
+    background: #f2f2f2;
     height: 600px;
     margin-bottom: 20px;
     .main-site-A {
       width: 50%;
-      background: red;
+      height: 35px;
+      background: #ffffff;
+      .site-title {
+        padding: 0 10px;
+        font-size: 16px;
+      }
+    }
+    .main-site-B {
+      width: 50%;
+      height: 35px;
+      background: #ffffff;
+      .site-title {
+        padding: 0 30px;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.site-container {
+  padding: 10px 10px 10px;
+  .site-con-info {
+    padding: 12px 0;
+    .site-info-label {
+      font: 600 12px '微软雅黑';
+      display: inline-block;
+      width: 30%;
+    }
+    .site-info-value {
+      font: 400 12px '微软雅黑';
+      color: #333333;
+      vertical-align:middle;
+      display: inline-block;
+      width: 60%
     }
   }
 }

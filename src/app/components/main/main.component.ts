@@ -40,7 +40,7 @@ export class MainComponent implements OnInit {
       {
         label: '子墨2', value: 'usa.png',
         children: [
-          {label: 'Cfsaadillac', value: 'Cadillac'},
+          {label: 'CfsaadillacCfsaadillacCfsaadillac', value: 'Cadillac'},
           {label: 'Ffasord', value: 'Ford'},
           {label: 'GMC', value: 'GMC'}
         ]

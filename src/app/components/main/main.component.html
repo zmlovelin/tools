@@ -19,7 +19,10 @@
       </ng-template>
       </p-dropdown>
     </div>
-
+    <div class="title-A">
+      <div style="font:500 16px '微软雅黑';margin:5px;border-bottom: 1px solid #ccc;padding:10px 0px 15px">A站</div>
+      <div style="margin:5px 5px 10px">OTN支+OTN线</div>
+    </div>
     <div class="main-left-p5">
       <tl-selectDown  [gropTitle]="'选择设备'"
                       [filter]="true"
@@ -29,11 +32,63 @@
                       [selectWidth]="400"
                       (change)="onSelectChange($event)">
       </tl-selectDown>
+
+    </div>
+    <div class="main-left-p5">
+      <tl-selectDown [gropTitle]="'选择设备'"
+      [filter]="false"
+      [showSelectTile]="false"
+      [data]="data1"
+      [selectWidth]="200"
+      (change)="onSelectChange($event)"
+      ></tl-selectDown>
     </div>
 
   </div>
+
   <div class="main-right">
-    <div class="main-site-A"></div>
+    <div class="main-site-A">
+      <div class="site-title">
+        <i class="anticon anticon-filter" style="font-size: 25px;color: red;"></i>
+        <span style="font-size: 16px;vertical-align: super">A站</span>
+      </div>
+
+      <div class="site-container" >
+        <div class="site-con-info" >
+          <span class="site-info-label" >设备：</span>
+          <span class="overflows site-info-value">1800 V(Z系列)</span>
+        </div>
+        <!--<div class="site-con-info" >-->
+          <!--<span class="site-info-label" >设备：</span>-->
+          <!--<span class="overflows site-info-value">123451234512345123451234512345123451234512345</span>-->
+        <!--</div>-->
+        <!--<div class="site-con-info" >-->
+          <!--<span class="site-info-label" >设备：</span>-->
+          <!--<span class="overflows site-info-value">123451234512345123451234512345123451234512345</span>-->
+        <!--</div>-->
+      </div>
+    </div>
+    <div class="main-site-B">
+      <div class="site-title" style="padding: 0">
+        <i class="anticon anticon-filter" style="font-size: 25px;color: red;"></i>
+        <span style="font-size: 16px;vertical-align: super">B站</span>
+      </div>
+
+      <div class="site-container" >
+        <div class="site-con-info" >
+          <span class="site-info-label" >设备：</span>
+          <span class="overflows site-info-value">123451234512345123451234512345123451234512345</span>
+        </div>
+        <div class="site-con-info" >
+          <span class="site-info-label" >设备：</span>
+          <span class="overflows site-info-value">123451234512345123451234512345123451234512345</span>
+        </div>
+        <div class="site-con-info" >
+          <span class="site-info-label" >设备：</span>
+          <span class="overflows site-info-value">123451234512345123451234512345123451234512345</span>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 

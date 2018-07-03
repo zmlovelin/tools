@@ -5,4 +5,14 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  color:#222222;
+  font-family: '微软雅黑';
+}
+
+.overflows {
+  //显示出省略号
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
 }
