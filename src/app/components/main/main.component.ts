@@ -1,5 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-
+import {Router} from '@angular/router';
+import {
+  MonitorTemplateService,
+  MonitorTemplate
+} from '../../core/models-service/monitor-service/monitorTemplate-service';
 
 @Component({
   selector: 'app-main',
@@ -14,7 +18,20 @@ export class MainComponent implements OnInit {
   cars;
   groupedCars;
   selectedCar2;
-  constructor() {
+  constructor(
+    private $router: Router,
+    private $service: MonitorTemplateService
+  ) {
+    // 模拟请求的接口
+    this.$service.getMonitorTemplatePagination({
+        pageNum: 1,
+        pageSize: 10,
+        queryTerm: {mtName: ''}
+      }, {})
+      .then(success => {
+        console.log(success);
+      });
+
 
   }
 
